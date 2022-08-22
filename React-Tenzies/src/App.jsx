@@ -4,7 +4,7 @@ import Die from "./Die.jsx"
 export default function App() {
     return (
         <main>
-            <div className="container">
+            <div className="dice--container">
                 <Die value="1" />
                 <Die value="1" />
                 <Die value="1" />
