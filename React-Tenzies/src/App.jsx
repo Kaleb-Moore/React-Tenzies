@@ -1,25 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Die from "./Die.jsx"
 
 export default function App() {
 
+    const [dice, setDice] = useState(allNewDice());
+
+    console.log(dice)
+
     function allNewDice() {
-        const numArray = Array.from({length: 10}, () => Math.floor(Math.random() * 6 + 1));
+        return Array.from({length: 10}, () => Math.floor(Math.random() * 6 + 1));
     }
 
     return (
         <main>
             <div className="dice--container">
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
+                
             </div>
         </main>
     )
