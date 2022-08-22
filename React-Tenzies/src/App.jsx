@@ -5,16 +5,16 @@ export default function App() {
 
     const [dice, setDice] = useState(allNewDice());
 
-    console.log(dice)
-
     function allNewDice() {
         return Array.from({length: 10}, () => Math.floor(Math.random() * 6 + 1));
     }
 
+    const diceElements = dice.map(die => <Die value={die} />)
+    
     return (
         <main>
             <div className="dice--container">
-                
+                {diceElements}
             </div>
         </main>
     )
