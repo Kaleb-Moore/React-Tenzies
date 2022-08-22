@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Die from "./Die.jsx"
+import Button from './Button.jsx';
 
 export default function App() {
 
@@ -9,6 +10,10 @@ export default function App() {
         return Array.from({length: 10}, () => Math.floor(Math.random() * 6 + 1));
     }
 
+    function updateDice() {
+        setDice(allNewDice())
+    }
+
     const diceElements = dice.map(die => <Die value={die} />)
     
     return (
@@ -16,6 +21,7 @@ export default function App() {
             <div className="dice--container">
                 {diceElements}
             </div>
+            <Button handleClick={updateDice}/>
         </main>
     )
 }

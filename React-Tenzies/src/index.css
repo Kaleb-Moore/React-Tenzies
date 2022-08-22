@@ -5,6 +5,7 @@
 body {
   margin: 0;
   background-color: #0B2434;
+  font-family: 'Karla', sans-serif;
   padding: 20px;
 }
 
@@ -15,6 +16,7 @@ main {
   border-radius: 10px;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -39,6 +41,22 @@ main {
 
 .die--face {
   font-size: 2rem;
-  font-family: Karla;
   font-weight: bold;
+}
+
+.roll-btn {
+  width: 100px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 24px;
+  cursor: pointer;
+  font-family: 'Karla', sans-serif;
+}
+
+.roll-btn:active {
+  box-shadow: inset 0px 0px 10px -3px rgba(0, 0, 0, 0.7);
 }
