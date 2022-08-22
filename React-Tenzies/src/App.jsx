@@ -16,7 +16,6 @@ export default function App() {
 
         if (allDiceHeld && allSameValue){
             setTenzies(true);
-            console.log("You Won!");
         }
     }, [dice])
 
