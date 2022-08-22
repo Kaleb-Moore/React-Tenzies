@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {nanoid} from 'nanoid';
 import Die from "./Die.jsx"
 import Button from './Button.jsx';
@@ -6,6 +6,18 @@ import Button from './Button.jsx';
 export default function App() {
 
     const [dice, setDice] = useState(allNewDice());
+    const [tenzies, setTenzies] = useState(false);
+
+    useEffect(() => {
+        const allDiceHeld = dice.every(die => die.isHeld);
+        const firstDie = dice[0].value;
+        const allSameValue = dice.every(die => die.value === firstDie)
+
+        if (allDiceHeld && allSameValue){
+            setTenzies(true);
+            console.log("You Won!");
+        }
+    }, [dice])
 
     function newDie () {
         return { 
